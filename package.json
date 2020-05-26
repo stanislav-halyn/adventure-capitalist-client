@@ -26,6 +26,8 @@
     "node": ">11.15.0"
   },
   "devDependencies": {
+    "@types/react": "16.9.35",
+    "@types/react-dom": "16.9.8",
     "@commitlint/cli": "8.3.5",
     "awesome-typescript-loader": "5.2.1",
     "css-loader": "3.5.3",
@@ -41,8 +43,6 @@
     "webpack-dev-server": "3.11.0"
   },
   "dependencies": {
-    "@types/react": "16.9.35",
-    "@types/react-dom": "16.9.8",
     "react": "16.13.1",
     "react-dom": "16.13.1"
   },
