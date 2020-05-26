@@ -2,7 +2,7 @@
   "name": "adventure-capitalist-client",
   "version": "0.0.0",
   "description": "This is a client for the `adventure-capitalist-game` repository.",
-  "main": "index.js",
+  "main": "./dist/bundle.min.js",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/stanislav-halyn/adventure-capitalist-client.git"
@@ -14,7 +14,8 @@
   },
   "homepage": "https://github.com/stanislav-halyn/adventure-capitalist-client#readme",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "webpack --mode development --config ./webpack/webpack.config.js",
+    "build": "webpack --mode production --config ./webpack/webpack.config.js"
   },
   "husky": {
     "hooks": {
@@ -26,8 +27,19 @@
   },
   "devDependencies": {
     "@commitlint/cli": "8.3.5",
+    "awesome-typescript-loader": "5.2.1",
     "cz-customizable": "6.2.0",
-    "husky": "4.2.5"
+    "html-webpack-plugin": "4.3.0",
+    "husky": "4.2.5",
+    "typescript": "3.9.3",
+    "webpack": "4.43.0",
+    "webpack-cli": "3.3.11"
+  },
+  "dependencies": {
+    "@types/react": "16.9.35",
+    "@types/react-dom": "16.9.8",
+    "react": "16.13.1",
+    "react-dom": "16.13.1"
   },
   "config": {
     "commitizen": {
