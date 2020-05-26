@@ -15,7 +15,9 @@
   "homepage": "https://github.com/stanislav-halyn/adventure-capitalist-client#readme",
   "scripts": {
     "start": "webpack-dev-server --mode development --config ./webpack/webpack.config.js --open --hot",
-    "build": "webpack --mode production --config ./webpack/webpack.config.js"
+    "build": "webpack --mode production --config ./webpack/webpack.config.js",
+    "test": "jest ./src --passWithNoTests --config ./config/jest/jest.config.js",
+    "test:watch": "jest ./src --watch --passWithNoTests --config ./config/jest/jest.config.js"
   },
   "husky": {
     "hooks": {
@@ -26,6 +28,8 @@
     "node": ">11.15.0"
   },
   "devDependencies": {
+    "@babel/preset-env": "7.9.6",
+    "@babel/preset-typescript": "7.9.0",
     "@commitlint/cli": "8.3.5",
     "@types/react": "16.9.35",
     "@types/react-dom": "16.9.8",
@@ -36,9 +40,11 @@
     "cz-customizable": "6.2.0",
     "html-webpack-plugin": "4.3.0",
     "husky": "4.2.5",
+    "jest": "26.0.1",
     "mini-css-extract-plugin": "0.9.0",
     "node-sass": "4.14.1",
     "sass-loader": "8.0.2",
+    "ts-jest": "26.0.0",
     "typescript": "3.9.3",
     "webpack": "4.43.0",
     "webpack-cli": "3.3.11",
