@@ -14,7 +14,7 @@
   },
   "homepage": "https://github.com/stanislav-halyn/adventure-capitalist-client#readme",
   "scripts": {
-    "start": "webpack --mode development --config ./webpack/webpack.config.js",
+    "start": "webpack-dev-server --mode development --config ./webpack/webpack.config.js --open --hot", 
     "build": "webpack --mode production --config ./webpack/webpack.config.js"
   },
   "husky": {
@@ -33,7 +33,8 @@
     "husky": "4.2.5",
     "typescript": "3.9.3",
     "webpack": "4.43.0",
-    "webpack-cli": "3.3.11"
+    "webpack-cli": "3.3.11",
+    "webpack-dev-server": "3.11.0"
   },
   "dependencies": {
     "@types/react": "16.9.35",
