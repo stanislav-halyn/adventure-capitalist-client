@@ -1,0 +1,40 @@
+{
+  "name": "adventure-capitalist-client",
+  "version": "0.0.0",
+  "description": "This is a client for the `adventure-capitalist-game` repository.",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/stanislav-halyn/adventure-capitalist-client.git"
+  },
+  "author": "Stanislav Halyn <stasgalin@gmail.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/stanislav-halyn/adventure-capitalist-client/issues"
+  },
+  "homepage": "https://github.com/stanislav-halyn/adventure-capitalist-client#readme",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "husky": {
+    "hooks": {
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS -g './config/git/commitlint.js'"
+    }
+  },
+  "engines": {
+    "node": ">11.15.0"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "8.3.5",
+    "cz-customizable": "6.2.0",
+    "husky": "4.2.5"
+  },
+  "config": {
+    "commitizen": {
+      "path": "node_modules/cz-customizable"
+    },
+    "cz-customizable": {
+      "config": "config/git/commitizen.js"
+    }
+  }
+}
