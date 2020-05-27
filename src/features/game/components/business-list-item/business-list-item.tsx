@@ -11,7 +11,8 @@ import GameText from '../game-text';
 import {
   emitBuyBusiness,
   emitUpgradeBusiness,
-  emitGainCapital
+  emitGainCapital,
+  emitHireManager
 } from '../../utils/game-socket-emitter.utils';
 
 // Styles
@@ -73,6 +74,18 @@ const BusinessListItem = ({
                       gainCapitalDurationMs={gainCapitalDurationMs}
                       startGainCapitalTimestamp={startGainCapitalTimestamp} />
                   : 'gain capital'
+                }
+              </GameButton>
+            ) : null}
+
+          {isBought
+            ? (
+              <GameButton onClick={() => emitHireManager({ businessId: id })}>
+                {startGainCapitalTimestamp
+                  ? <TimerCountdown
+                      gainCapitalDurationMs={gainCapitalDurationMs}
+                      startGainCapitalTimestamp={startGainCapitalTimestamp} />
+                  : 'hire a manager'
                 }
               </GameButton>
             ) : null}

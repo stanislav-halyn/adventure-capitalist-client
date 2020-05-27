@@ -36,3 +36,7 @@ export const emitUpgradeBusiness = (payload: EmitBusinessChangePayloadType): voi
 export const emitGainCapital = (payload: EmitBusinessChangePayloadType): void => {
   emit(GameActions.GAIN_CAPITAL, payload);
 }
+
+export const emitHireManager = (payload: EmitBusinessChangePayloadType): void => {
+  emit(GameActions.HIRE_MANAGER, payload);
+}
