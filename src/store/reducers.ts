@@ -2,7 +2,7 @@
 import { combineReducers } from 'redux';
 
 // Reducers
-import { gameReducers } from '../game';
+import { gameReducers } from '../features/game';
 
 
 const rootReducer = combineReducers({

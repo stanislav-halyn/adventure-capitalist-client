@@ -14,7 +14,7 @@ import {
 import { selectUserInfoCapital } from '../../selectors/user-info.selectors';
 
 // Typings
-import { RootReducerStateType } from '../../../store';
+import { RootReducerStateType } from '../../../../store';
 
 
 type GameContainerProps = PropsFromRedux;
