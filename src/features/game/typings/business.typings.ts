@@ -37,7 +37,7 @@ export type UpdateBusinessPayloadType = {
 
 
 export type GetBusinessListPayloadType = {
-  businessesList: Array<BusinessType>
+  businessList: Array<BusinessType>
 };
 
 // Server response types

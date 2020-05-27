@@ -45,13 +45,13 @@ const handleGetBusinessList = (
   state: BusinessStateType,
   action: PayloadAction<GetBusinessListPayloadType>
 ): BusinessStateType => {
-  const { businessesList } = action.payload;
+  const { businessList } = action.payload;
 
-  const { businessById, businessIds } = formatBusinessListToMap(businessesList);
+  const { businessById, businessIds } = formatBusinessListToMap(businessList);
 
   return {
     ...state,
-    count: businessesList.length,
+    count: businessList.length,
     businessById,
     businessIds
   };

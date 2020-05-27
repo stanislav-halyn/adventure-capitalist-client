@@ -13,9 +13,9 @@ type BusinessesMapType = {
 
 
 export const formatBusinessListToMap = (
-  businessesList: Array<BusinessType>
+  businessList: Array<BusinessType>
 ): BusinessesMapType => (
-  businessesList
+  businessList
     .reduce((acc: BusinessesMapType, business: BusinessType) => ({
         businessById: { ...acc.businessById, [business.id]: business },
         businessIds: [...acc.businessIds, business.id]

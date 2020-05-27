@@ -55,7 +55,7 @@ describe('#business.reducer.ts', () => {
   describe(`=> action: ${GET_BUSINESS_LIST}`, () => {
     const action = {
       type: GET_BUSINESS_LIST,
-      payload: { businessesList: [business] }
+      payload: { businessList: [business] }
     };
 
     const formattedBusinessesList = {
