@@ -13,7 +13,7 @@ export type BusinessType = {
   isBought: boolean
 };
 
-export type BusinessesByIdType = {
+export type BusinessByIdType = {
   [key: number]: BusinessType
 };
 
@@ -21,8 +21,8 @@ export type BusinessesByIdType = {
 // Reducer types
 export type BusinessStateType = {
   count: number
-  businessesById: BusinessesByIdType,
-  businessesIds: Array<BusinessIdType>
+  businessById: BusinessByIdType,
+  businessIds: Array<BusinessIdType>
 };
 
 
@@ -32,7 +32,7 @@ export type UpdateBusinessPayloadType = {
 };
 
 
-export type GetListOfBusinessesActionType = {
+export type GetBusinessListPayloadType = {
   businessesList: Array<BusinessType>
 };
 

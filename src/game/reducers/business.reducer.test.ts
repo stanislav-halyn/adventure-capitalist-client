@@ -4,26 +4,26 @@ import businessReducer from './business.reducer';
 // Constants
 import {
   UPDATE_BUSINESS,
-  GET_LIST_OF_BUSINESSES
+  GET_BUSINESS_LIST
 } from '../constants/business.constants';
 
 // Typings
 import { BusinessType, BusinessStateType } from '../typings/business.typings';
 
 // Utils
-import { formatBusinessesListToMap } from '../utils/business-data-flow.utils';
+import { formatBusinessListToMap } from '../utils/business-data-flow.utils';
 
 
 jest.mock('../utils/business-data-flow.utils', () => ({
-  formatBusinessesListToMap: jest.fn()
+  formatBusinessListToMap: jest.fn()
 }));
 
 
 describe('#business.reducer.ts', () => {
   const initialState: BusinessStateType = {
     count: 0,
-    businessesById: {},
-    businessesIds: []
+    businessById: {},
+    businessIds: []
   };
 
   const business: BusinessType = {
@@ -52,18 +52,18 @@ describe('#business.reducer.ts', () => {
   });
 
 
-  describe(`=> action: ${GET_LIST_OF_BUSINESSES}`, () => {
+  describe(`=> action: ${GET_BUSINESS_LIST}`, () => {
     const action = {
-      type: GET_LIST_OF_BUSINESSES,
+      type: GET_BUSINESS_LIST,
       payload: { businessesList: [business] }
     };
 
     const formattedBusinessesList = {
-      businessesById: { 0: business },
-      businessesIds: [0]
+      businessById: { 0: business },
+      businessIds: [0]
     };
 
-    (formatBusinessesListToMap as jest.Mock).mockImplementation(() => formattedBusinessesList);
+    (formatBusinessListToMap as jest.Mock).mockImplementation(() => formattedBusinessesList);
 
 
     test(`should return correct state`, () => {
@@ -72,21 +72,21 @@ describe('#business.reducer.ts', () => {
       expect(result.count)
         .toEqual(1);
   
-      expect(result.businessesById)
-        .toEqual(formattedBusinessesList.businessesById);
+      expect(result.businessById)
+        .toEqual(formattedBusinessesList.businessById);
   
-      expect(result.businessesIds)
-        .toEqual(formattedBusinessesList.businessesIds);
+      expect(result.businessIds)
+        .toEqual(formattedBusinessesList.businessIds);
     });
 
 
     test(`should call functions with correct arguments`, () => {
       businessReducer(initialState, action);
   
-      expect(formatBusinessesListToMap)
+      expect(formatBusinessListToMap)
         .toBeCalled();
 
-      expect(formatBusinessesListToMap)
+      expect(formatBusinessListToMap)
         .toBeCalledWith([business]);
     });
   });
@@ -95,8 +95,8 @@ describe('#business.reducer.ts', () => {
   test(`should return correct state for ${UPDATE_BUSINESS} action`, () => {
     const initialState = {
       count: 1,
-      businessesById: { 0: business },
-      businessesIds: [0]
+      businessById: { 0: business },
+      businessIds: [0]
     };
 
     const updatedProfit = 10;
@@ -113,12 +113,12 @@ describe('#business.reducer.ts', () => {
     expect(result.count)
       .toEqual(1);
 
-    expect(result.businessesById)
+    expect(result.businessById)
       .toEqual({
         0: { ...business, profit: updatedProfit }
       });
 
-    expect(result.businessesIds)
+    expect(result.businessIds)
       .toEqual([0]);
   });
 });

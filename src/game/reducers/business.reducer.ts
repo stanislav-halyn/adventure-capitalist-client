@@ -4,24 +4,24 @@ import { createReducer, PayloadAction } from '@reduxjs/toolkit';
 // Constants
 import {
   UPDATE_BUSINESS,
-  GET_LIST_OF_BUSINESSES
+  GET_BUSINESS_LIST
 } from '../constants/business.constants';
 
 // Typings
 import {
   BusinessStateType,
   UpdateBusinessPayloadType,
-  GetListOfBusinessesActionType,
+  GetBusinessListPayloadType,
 } from '../typings/business.typings';
 
 // Utils
-import { formatBusinessesListToMap } from '../utils/business-data-flow.utils';
+import { formatBusinessListToMap } from '../utils/business-data-flow.utils';
 
 
 const initialState: BusinessStateType = {
   count: 0,
-  businessesById: {},
-  businessesIds: []
+  businessById: {},
+  businessIds: []
 };
 
 
@@ -33,33 +33,33 @@ const handleUpdateBusiness = (
 
   return {
     ...state,
-    businessesById: {
-      ...state.businessesById,
+    businessById: {
+      ...state.businessById,
       [business.id]: business
     }
   };
 };
 
 
-const handleGetListOfBusinesses = (
+const handleGetBusinessList = (
   state: BusinessStateType,
-  action: PayloadAction<GetListOfBusinessesActionType>
+  action: PayloadAction<GetBusinessListPayloadType>
 ): BusinessStateType => {
   const { businessesList } = action.payload;
 
-  const { businessesById, businessesIds } = formatBusinessesListToMap(businessesList);
+  const { businessById, businessIds } = formatBusinessListToMap(businessesList);
 
   return {
     ...state,
     count: businessesList.length,
-    businessesById,
-    businessesIds
+    businessById,
+    businessIds
   };
 };
 
 const handlers = {
   [UPDATE_BUSINESS]: handleUpdateBusiness,
-  [GET_LIST_OF_BUSINESSES]: handleGetListOfBusinesses
+  [GET_BUSINESS_LIST]: handleGetBusinessList
 };
 
 export default createReducer(initialState, handlers);

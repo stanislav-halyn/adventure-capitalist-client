@@ -2,27 +2,27 @@
 import {
   BusinessType,
   BusinessIdType,
-  BusinessesByIdType
+  BusinessByIdType
 } from '../typings/business.typings';
 
 
 type BusinessesMapType = {
-  businessesById: BusinessesByIdType
-  businessesIds: Array<BusinessIdType>
+  businessById: BusinessByIdType
+  businessIds: Array<BusinessIdType>
 };
 
 
-export const formatBusinessesListToMap = (
+export const formatBusinessListToMap = (
   businessesList: Array<BusinessType>
 ): BusinessesMapType => (
   businessesList
     .reduce((acc: BusinessesMapType, business: BusinessType) => ({
-        businessesById: { ...acc.businessesById, [business.id]: business },
-        businessesIds: [...acc.businessesIds, business.id]
+        businessById: { ...acc.businessById, [business.id]: business },
+        businessIds: [...acc.businessIds, business.id]
       }),
       {
-        businessesById: {},
-        businessesIds: []
+        businessById: {},
+        businessIds: []
       }
     )
 );

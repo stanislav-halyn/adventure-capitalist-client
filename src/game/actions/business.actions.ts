@@ -4,16 +4,16 @@ import { createAction } from '@reduxjs/toolkit';
 // Constants
 import {
   UPDATE_BUSINESS,
-  GET_LIST_OF_BUSINESSES
+  GET_BUSINESS_LIST
 } from '../constants/business.constants';
 
 // Typings
 import {
   UpdateBusinessPayloadType,
-  GetListOfBusinessesActionType,
+  GetBusinessListPayloadType,
 } from '../typings/business.typings';
 
 
 export const updateBusiness = createAction<UpdateBusinessPayloadType>(UPDATE_BUSINESS);
 
-export const getListOfBusinesses = createAction<GetListOfBusinessesActionType>(GET_LIST_OF_BUSINESSES);
+export const getBusinessList = createAction<GetBusinessListPayloadType>(GET_BUSINESS_LIST);
