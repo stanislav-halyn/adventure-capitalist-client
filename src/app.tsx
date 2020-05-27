@@ -1,16 +1,14 @@
-import * as React from 'react';
+// Modules
+import React from 'react';
 
-import PageInterface from './page-interface';
+// Containers
+import { GameContainer } from './features/game';
 
-class App extends React.Component<PageInterface, {}> {
-  render() {
-    return (
-      <div>
-        <h1>Welcome to React with Typescript</h1>
-        <p>The color of this page is: {this.props.color}</p>
-      </div>
-    );
-  }
-}
+
+const App = () => {
+  return (
+    <GameContainer />
+  );
+};
 
 export default App;
