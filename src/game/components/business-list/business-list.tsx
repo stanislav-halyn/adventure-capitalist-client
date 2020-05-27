@@ -6,35 +6,40 @@ import CSSModules from 'react-css-modules';
 import BusinessListItem from '../business-list-item';
 
 // Typings
-import { BusinessType } from '../../typings/business.typings';
+import { BusinessIdType, BusinessByIdType } from '../../typings/business.typings';
 
 // Styles
 import styles from './business-list.scss';
 
 
 type BusinessListProps = {
-  businessList: Array<BusinessType>
+  businessIds: Array<BusinessIdType>
+  businessById: BusinessByIdType
   userCapital: number
 };
 
 
 const BusinessList = ({
-  businessList,
+  businessIds,
+  businessById,
   userCapital
 }: BusinessListProps) => {
   return (
     <div>
-      {businessList.map(business => (
-        <BusinessListItem
-          id={business.id}
-          title={business.title}
-          profit={business.profit}
-          price={business.price}
-          isBought={business.isBought}
-          gainCapitalDurationMs={business.gainCapitalDurationMs}
-          startGainCapitalTimestamp={business.startGainCapitalTimestamp}
-          userCapital={userCapital} />
-      ))}
+      {businessIds.map(businessId => {
+        const business = businessById[businessId];
+
+        return (
+          <BusinessListItem
+            id={business.id}
+            title={business.title}
+            profit={business.profit}
+            price={business.price}
+            isBought={business.isBought}
+            gainCapitalDurationMs={business.gainCapitalDurationMs}
+            startGainCapitalTimestamp={business.startGainCapitalTimestamp}
+            userCapital={userCapital} />
+        )})}
     </div>
   );
 };

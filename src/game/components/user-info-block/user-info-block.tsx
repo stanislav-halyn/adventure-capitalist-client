@@ -7,16 +7,16 @@ import styles from './user-info-block.scss';
 
 
 type UserInfoBlockProps = {
-  capital: number
+  userCapital: number
 }
 
 
 const UserInfoBlock = ({
-  capital
+  userCapital
 }: UserInfoBlockProps) => {
   return (
     <div>
-      Your capital is: ${capital}
+      Your capital is: ${userCapital}
     </div>
   );
 };
