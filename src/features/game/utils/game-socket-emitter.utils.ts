@@ -14,7 +14,7 @@ type EmitBusinessChangePayloadType = {
 
 
 export const emitUpdateUserInfo = (): void => {
-  emit(GameActions.UPDATE_USER_INFO);
+  emit(GameActions.GET_USER_INFO);
 }
 
 

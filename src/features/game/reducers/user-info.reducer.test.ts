@@ -2,7 +2,7 @@
 import userInfoReducer from './user-info.reducer';
 
 // Constants
-import { UPDATE_USER_INFO } from '../constants/user-info.constants';
+import { GET_USER_INFO } from '../constants/user-info.constants';
 
 // Typings
 import { UserInfoStateType } from '../typings/user-info.typings';
@@ -28,11 +28,11 @@ describe('#user-info.reducer.ts', () => {
   });
 
 
-  test(`should return correct state for ${UPDATE_USER_INFO} action`, () => {
+  test(`should return correct state for ${GET_USER_INFO} action`, () => {
     const capital = 100;
 
     const action = {
-      type: UPDATE_USER_INFO,
+      type: GET_USER_INFO,
       payload: { capital }
     };
 

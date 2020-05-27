@@ -7,6 +7,13 @@ import TimerCountdown from '../timer-countdown';
 import GameButton from '../game-button';
 import GameText from '../game-text';
 
+// Emitters
+import {
+  emitBuyBusiness,
+  emitUpgradeBusiness,
+  emitGainCapital
+} from '../../utils/game-socket-emitter.utils';
+
 // Styles
 import styles from './business-list-item.scss';
 
@@ -45,14 +52,14 @@ const BusinessListItem = ({
         <div className={styles['business-item-content']}>
           {isBought
             ? (
-              <GameButton onClick={() => console.log('upgrade business!', id)}>
+              <GameButton onClick={() => emitUpgradeBusiness({ businessId: id })}>
                 upgrade for {price}$
               </GameButton>
             )
             : (
               <GameButton
                 disabled={price > userCapital}
-                onClick={() => console.log('buy business!', id)}
+                onClick={() => emitBuyBusiness({ businessId: id })}
               >
                 buy for {price}$
               </GameButton>
@@ -60,7 +67,7 @@ const BusinessListItem = ({
 
           {isBought
             ? (
-              <GameButton onClick={() => console.log('gain capital!', id)}>
+              <GameButton onClick={() => emitGainCapital({ businessId: id })}>
                 {startGainCapitalTimestamp
                   ? <TimerCountdown
                       gainCapitalDurationMs={gainCapitalDurationMs}

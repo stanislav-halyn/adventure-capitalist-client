@@ -13,4 +13,4 @@ export type UpdateUserInfoPayloadType = {
 }
 
 // Server response types
-export type UpdateUserInfoServerResponseType = ServerResponseType<UpdateUserInfoPayloadType>;
+export type GetUserInfoServerResponseType = ServerResponseType<UpdateUserInfoPayloadType>;

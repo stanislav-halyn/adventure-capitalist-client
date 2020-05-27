@@ -14,6 +14,6 @@ import {
 } from '../typings/business.typings';
 
 
-export const updateBusiness = createAction<UpdateBusinessPayloadType>(UPDATE_BUSINESS);
+export const getBusinessInfo = createAction<UpdateBusinessPayloadType>(UPDATE_BUSINESS);
 
 export const getBusinessList = createAction<GetBusinessListPayloadType>(GET_BUSINESS_LIST);

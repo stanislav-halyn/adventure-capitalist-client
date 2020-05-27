@@ -3,13 +3,13 @@ import { useEffect, useCallback } from 'react';
 import { useDispatch } from 'react-redux';
 
 // Actions
-import { updateUserInfo } from '../actions/user-info.actions';
-import { updateBusiness, getBusinessList } from '../actions/business.actions';
+import { getUserInfo } from '../actions/user-info.actions';
+import { getBusinessInfo, getBusinessList } from '../actions/business.actions';
 
 // Typings
-import { UpdateUserInfoServerResponseType } from '../typings/user-info.typings';
+import { GetUserInfoServerResponseType } from '../typings/user-info.typings';
 import {
-  UpdateBusinessServerResponseType,
+  GetBusinessServerResponseType,
   GetBusinessListServerResponseType
 } from '../typings/business.typings';
 
@@ -24,13 +24,13 @@ export default () => {
   const dispatch = useDispatch();
 
 
-  const updateUserInfoHandler = useCallback((response: UpdateUserInfoServerResponseType) => {
-    dispatch(updateUserInfo(response.data));
+  const getUserInfoHandler = useCallback((response: GetUserInfoServerResponseType) => {
+    dispatch(getUserInfo(response.data));
   }, [dispatch]);
 
 
-  const updateBusinessInfoHandler = useCallback((response: UpdateBusinessServerResponseType) => {
-    dispatch(updateBusiness(response.data));
+  const getBusinessInfoHandler = useCallback((response: GetBusinessServerResponseType) => {
+    dispatch(getBusinessInfo(response.data));
   }, [dispatch]);
 
 
@@ -40,14 +40,14 @@ export default () => {
 
 
   useEffect(() => {
-    subscribeTo(GameActions.UPDATE_USER_INFO, updateUserInfoHandler);
-    subscribeTo(GameActions.UPDATE_BUSINESS_INFO, updateBusinessInfoHandler);
+    subscribeTo(GameActions.GET_USER_INFO, getUserInfoHandler);
+    subscribeTo(GameActions.GET_BUSINESS_INFO, getBusinessInfoHandler);
     subscribeTo(GameActions.GET_BUSINESS_LIST, getBusinessListHandler);
 
 
     return () => {
-      unsubscribe(GameActions.UPDATE_USER_INFO, updateUserInfoHandler);
-      unsubscribe(GameActions.UPDATE_BUSINESS_INFO, updateBusinessInfoHandler);
+      unsubscribe(GameActions.GET_USER_INFO, getUserInfoHandler);
+      unsubscribe(GameActions.GET_BUSINESS_INFO, getBusinessInfoHandler);
       unsubscribe(GameActions.GET_BUSINESS_LIST, getBusinessListHandler);
     };
   }, [dispatch]);

@@ -2,7 +2,7 @@
 import { createReducer, PayloadAction } from '@reduxjs/toolkit';
 
 // Constants
-import { UPDATE_USER_INFO } from '../constants/user-info.constants';
+import { GET_USER_INFO } from '../constants/user-info.constants';
 
 // Typings
 import {
@@ -26,7 +26,7 @@ const handleUpdateUserInfo = (
 
 
 const handlers = {
-  [UPDATE_USER_INFO]: handleUpdateUserInfo,
+  [GET_USER_INFO]: handleUpdateUserInfo,
 };
 
 export default createReducer(initialState, handlers);

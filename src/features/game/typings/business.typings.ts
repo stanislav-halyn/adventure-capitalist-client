@@ -41,7 +41,7 @@ export type GetBusinessListPayloadType = {
 };
 
 // Server response types
-export type UpdateBusinessServerResponseType = ServerResponseType<UpdateBusinessPayloadType>;
+export type GetBusinessServerResponseType = ServerResponseType<UpdateBusinessPayloadType>;
 
 export type GetBusinessListServerResponseType = ServerResponseType<GetBusinessListPayloadType>;
 
