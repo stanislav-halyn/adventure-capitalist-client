@@ -31,6 +31,7 @@ const BusinessList = ({
 
         return (
           <BusinessListItem
+            key={`business-item-${businessId}`}
             id={business.id}
             title={business.title}
             profit={business.profit}
