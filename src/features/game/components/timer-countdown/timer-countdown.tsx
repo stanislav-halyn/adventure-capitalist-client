@@ -1,5 +1,5 @@
 // Modules
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import CSSModules from 'react-css-modules';
 
 // Styles
@@ -26,10 +26,13 @@ const TimerCountdown = ({
   const [timeLeft, setTimeLeft] = useState(calculateTimeLeft());
 
   useEffect(() => {
-    setInterval(() => {
-      console.log('fire');
+    const id = setInterval(() => {
       setTimeLeft(calculateTimeLeft());
     }, 1000);
+
+    return () => {
+      clearInterval(id);
+    }
   }, []);
   
   return (
