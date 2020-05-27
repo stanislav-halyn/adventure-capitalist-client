@@ -1,5 +1,5 @@
 // Modules
-import React from 'react';
+import React, { useEffect } from 'react';
 import { connect, ConnectedProps } from 'react-redux';
 
 // Components
@@ -13,6 +13,12 @@ import {
 } from '../../selectors/business.selectors';
 import { selectUserInfoCapital } from '../../selectors/user-info.selectors';
 
+// Hooks
+import { useGameHandlers } from '../../hooks';
+
+// Utils
+import { emitUpdateUserInfo, emitGetBusinessList } from '../../utils/game-socket-emitter.utils';
+
 // Typings
 import { RootReducerStateType } from '../../../../store';
 
@@ -25,6 +31,16 @@ const GameContainer = ({
   businessById,
   userCapital
 }: GameContainerProps) => {
+  // Connect game sockets handlers
+  useGameHandlers();
+
+
+  useEffect(() => {
+    emitUpdateUserInfo();
+    emitGetBusinessList();
+  }, []);
+
+
   return (
     <div>
       <UserInfoBlock userCapital={userCapital} />

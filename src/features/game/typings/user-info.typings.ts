@@ -1,3 +1,7 @@
+// Utils
+import { ServerResponseType } from '../utils/typings.utils';
+
+
 // Reducer types
 export type UserInfoStateType = {
   capital: number
@@ -7,3 +11,6 @@ export type UserInfoStateType = {
 export type UpdateUserInfoPayloadType = {
   capital: number
 }
+
+// Server response types
+export type UpdateUserInfoServerResponseType = ServerResponseType<UpdateUserInfoPayloadType>;

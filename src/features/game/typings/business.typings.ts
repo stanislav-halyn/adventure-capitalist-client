@@ -1,3 +1,7 @@
+// Utils
+import { ServerResponseType } from '../utils/typings.utils';
+
+
 // General business types
 export type BusinessIdType = number;
 
@@ -35,4 +39,9 @@ export type UpdateBusinessPayloadType = {
 export type GetBusinessListPayloadType = {
   businessesList: Array<BusinessType>
 };
+
+// Server response types
+export type UpdateBusinessServerResponseType = ServerResponseType<UpdateBusinessPayloadType>;
+
+export type GetBusinessListServerResponseType = ServerResponseType<GetBusinessListPayloadType>;
 
