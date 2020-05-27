@@ -33,6 +33,7 @@
     "@commitlint/cli": "8.3.5",
     "@types/jest": "25.2.3",
     "@types/react": "16.9.35",
+    "@types/react-css-modules": "4.6.2",
     "@types/react-dom": "16.9.8",
     "@types/react-redux": "7.1.9",
     "@types/socket.io-client": "1.4.33",
