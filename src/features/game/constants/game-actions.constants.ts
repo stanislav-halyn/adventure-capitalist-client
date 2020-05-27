@@ -6,5 +6,6 @@ export const enum GameActions {
   BUY_BUSINESS = 'GAME:buy-business',
   UPGRADE_BUSINESS = 'GAME:upgrade-business',
   GAIN_CAPITAL = 'GAME:gain-capital',
-  HIRE_MANAGER = 'GAME:hire-manager'
+  HIRE_MANAGER = 'GAME:hire-manager',
+  ERROR = 'GAME:error'
 }

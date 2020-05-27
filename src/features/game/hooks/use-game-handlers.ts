@@ -10,7 +10,8 @@ import { getBusinessInfo, getBusinessList } from '../actions/business.actions';
 import { GetUserInfoServerResponseType } from '../typings/user-info.typings';
 import {
   GetBusinessServerResponseType,
-  GetBusinessListServerResponseType
+  GetBusinessListServerResponseType,
+  GameErrorServerResponseType
 } from '../typings/business.typings';
 
 // Utils
@@ -37,18 +38,25 @@ export default () => {
   const getBusinessListHandler = useCallback((response: GetBusinessListServerResponseType) => {
     dispatch(getBusinessList(response.data));
   }, [dispatch]);
+  
+
+  const gameErrorHandler = useCallback((response: GameErrorServerResponseType) => {
+    alert(response.data.error);
+  }, []);
 
 
   useEffect(() => {
     subscribeTo(GameActions.GET_USER_INFO, getUserInfoHandler);
     subscribeTo(GameActions.GET_BUSINESS_INFO, getBusinessInfoHandler);
     subscribeTo(GameActions.GET_BUSINESS_LIST, getBusinessListHandler);
+    subscribeTo(GameActions.ERROR, gameErrorHandler);
 
 
     return () => {
       unsubscribe(GameActions.GET_USER_INFO, getUserInfoHandler);
       unsubscribe(GameActions.GET_BUSINESS_INFO, getBusinessInfoHandler);
       unsubscribe(GameActions.GET_BUSINESS_LIST, getBusinessListHandler);
+      unsubscribe(GameActions.ERROR, gameErrorHandler);
     };
   }, [dispatch]);
 };

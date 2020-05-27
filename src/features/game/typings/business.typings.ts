@@ -40,8 +40,14 @@ export type GetBusinessListPayloadType = {
   businessList: Array<BusinessType>
 };
 
+export type GameErrorPayloadType = {
+  error: string
+};
+
 // Server response types
 export type GetBusinessServerResponseType = ServerResponseType<UpdateBusinessPayloadType>;
 
 export type GetBusinessListServerResponseType = ServerResponseType<GetBusinessListPayloadType>;
+
+export type GameErrorServerResponseType = ServerResponseType<GameErrorPayloadType>;
 
