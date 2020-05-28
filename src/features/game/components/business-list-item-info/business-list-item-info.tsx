@@ -7,9 +7,9 @@ import GameText from '../game-text';
 import Loader from '../loader-bar';
 
 // Utils
-import { calculateMsLeft, msToSeconds } from '../../../../utils/time-format.utils';
-import { formatLargeNumberToCurrency } from '../../../../utils/number-format.utils';
-import { calculatePercentageOf } from '../../../../utils/number.utils';
+import { calculateMsLeft, msToSeconds } from 'utils/time-format.utils';
+import { formatLargeNumberToCurrency } from 'utils/number-format.utils';
+import { calculatePercentageOf } from 'utils/number.utils';
 
 // Styles
 import styles from './business-list-item-info.scss';

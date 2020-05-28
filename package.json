@@ -14,8 +14,8 @@
   },
   "homepage": "https://github.com/stanislav-halyn/adventure-capitalist-client#readme",
   "scripts": {
-    "start": "webpack-dev-server --mode development --config ./webpack/webpack.config.js --open --hot",
-    "build": "webpack --mode production --config ./webpack/webpack.config.js",
+    "start": "webpack-dev-server --config ./webpack/webpack.dev.js",
+    "build": "webpack --config ./webpack/webpack.prod.js",
     "test": "jest ./src --passWithNoTests --config ./config/jest/jest.config.js",
     "test:watch": "jest ./src --watch --passWithNoTests --config ./config/jest/jest.config.js",
     "lint": "eslint . --ext .ts,.tsx",
@@ -42,8 +42,10 @@
     "@typescript-eslint/eslint-plugin": "3.0.2",
     "@typescript-eslint/parser": "3.0.2",
     "awesome-typescript-loader": "5.2.1",
+    "clean-webpack-plugin": "3.0.0",
     "css-loader": "3.5.3",
     "cz-customizable": "6.2.0",
+    "dotenv-webpack": "1.8.0",
     "eslint": "7.1.0",
     "eslint-config-airbnb-typescript": "7.2.1",
     "eslint-plugin-import": "2.20.2",
@@ -62,7 +64,8 @@
     "typescript": "3.9.3",
     "webpack": "4.43.0",
     "webpack-cli": "3.3.11",
-    "webpack-dev-server": "3.11.0"
+    "webpack-dev-server": "3.11.0",
+    "webpack-merge": "4.2.2"
   },
   "dependencies": {
     "@reduxjs/toolkit": "1.3.6",

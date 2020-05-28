@@ -1,5 +1,5 @@
 // Socket
-import { socket } from '../config/sockets';
+import { socket } from 'config/sockets';
 
 
 export const subscribeTo = <T> (eventName: string, handler: (args: T) => void): void => {

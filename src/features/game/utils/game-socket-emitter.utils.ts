@@ -1,5 +1,5 @@
 // Utils
-import { emit } from '../../../utils/socket.utils';
+import { emit } from 'utils/socket.utils';
 
 // Constants
 import { GameActions } from '../constants/game-actions.constants';

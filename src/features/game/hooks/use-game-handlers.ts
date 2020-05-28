@@ -15,7 +15,7 @@ import {
 } from '../typings/business.typings';
 
 // Utils
-import { subscribeTo, unsubscribe } from '../../../utils/socket.utils';
+import { subscribeTo, unsubscribe } from 'utils/socket.utils';
 
 // Constants
 import { GameActions } from '../constants/game-actions.constants';
@@ -58,5 +58,11 @@ export default () => {
       unsubscribe(GameActions.GET_BUSINESS_LIST, getBusinessListHandler);
       unsubscribe(GameActions.ERROR, gameErrorHandler);
     };
-  }, [dispatch]);
+  }, [
+    dispatch,
+    getUserInfoHandler,
+    getBusinessInfoHandler,
+    getBusinessListHandler,
+    gameErrorHandler
+  ]);
 };

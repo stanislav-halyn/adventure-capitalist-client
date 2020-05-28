@@ -2,7 +2,7 @@
 import { useEffect, useState, useMemo } from 'react';
 
 // Utils
-import { calculateTimeLeft } from '../../../utils/time-format.utils';
+import { calculateTimeLeft } from 'utils/time-format.utils';
 
 
 export default (durationMs: number, timestamp: number | null) => {
