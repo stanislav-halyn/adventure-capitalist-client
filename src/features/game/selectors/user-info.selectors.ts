@@ -1,5 +1,5 @@
 // Typings
-import { RootReducerStateType } from '../../../store';
+import { RootReducerStateType } from 'typings/store';
 
 
 export const selectUserInfoCapital = (state: RootReducerStateType) => (

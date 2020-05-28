@@ -1,5 +1,5 @@
 // Typings
-import { RootReducerStateType } from '../../../store';
+import { RootReducerStateType } from 'typings/store';
 
 
 export const selectBusinessIds = (state: RootReducerStateType) => (
@@ -9,4 +9,3 @@ export const selectBusinessIds = (state: RootReducerStateType) => (
 export const selectBusinessById = (state: RootReducerStateType) => (
   state.game.business.businessById
 );
-

@@ -20,7 +20,7 @@ import { useGameHandlers } from '../../hooks';
 import { emitUpdateUserInfo, emitGetBusinessList } from '../../utils/game-socket-emitter.utils';
 
 // Typings
-import { RootReducerStateType } from '../../../../store';
+import { RootReducerStateType } from 'typings/store';
 
 
 type GameContainerProps = PropsFromRedux;
