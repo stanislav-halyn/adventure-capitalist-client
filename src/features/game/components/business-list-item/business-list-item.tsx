@@ -4,16 +4,13 @@ import CSSModules from 'react-css-modules';
 
 // Components
 import TimerCountdown from '../timer-countdown';
-import GameButton from '../game-button';
 import GameText from '../game-text';
+import BuyButton from '../buy-button';
+import UpgradeButton from '../upgrade-button';
+import BusinessButtonControls from '../business-button-controls';
 
-// Emitters
-import {
-  emitBuyBusiness,
-  emitUpgradeBusiness,
-  emitGainCapital,
-  emitHireManager
-} from '../../utils/game-socket-emitter.utils';
+// Utils
+import { formatLargeNumber } from '../../../../utils/number-format.utils';
 
 // Styles
 import styles from './business-list-item.scss';
@@ -22,76 +19,95 @@ import styles from './business-list-item.scss';
 type BusinessListItemProps = {
   id: number
   title: string
+  level: number
   profit: number
   price: number
   isBought: boolean
   gainCapitalDurationMs: number
   startGainCapitalTimestamp: number | null
-  userCapital: number
-}
+  userCapital: number,
+  isManaged: boolean,
+  isGainingCapital: boolean,
+  managerPrice: number
+};
+
+
+const Content = CSSModules(({
+  children,
+  className
+}: { children: React.ReactNode, className?: string, styleName?: string }) => (
+  <div styleName="common" className={className}>
+    {children}
+  </div>
+), styles);
 
 
 const BusinessListItem = ({
   id,
   title,
+  level,
   profit,
   price,
   isBought,
   gainCapitalDurationMs,
   startGainCapitalTimestamp,
-  userCapital
+  userCapital,
+  isManaged,
+  isGainingCapital,
+  managerPrice
 }: BusinessListItemProps) => {
+  if (!isBought) {
+    return (
+      <Content>
+        <BuyButton
+          businessId={id}
+          businessTitle={title}
+          businessPrice={price}
+          userCapital={userCapital} />
+      </Content>
+    );
+  }
+
   return (
-    <div className={styles['business-item']}>
-      <div>
-        <GameText>{title}</GameText>
-      </div>
+    <Content styleName="active">
+      <div styleName="content">
+        <div styleName="info">
+          <GameText styleName="title">{title}</GameText>
+          <GameText styleName="level">Level: {level}</GameText>
+        </div>
 
-      <div>
-        <GameText>Profit: {profit}</GameText>
+        <div styleName="controls">
+          <div styleName="profit">
+            <GameText styleName="profit-text">Profit: {formatLargeNumber(profit)}</GameText>
+          </div>
 
-        <div className={styles['business-item-content']}>
-          {isBought
-            ? (
-              <GameButton onClick={() => emitUpgradeBusiness({ businessId: id })}>
-                upgrade for {price}$
-              </GameButton>
-            )
-            : (
-              <GameButton
-                disabled={price > userCapital}
-                onClick={() => emitBuyBusiness({ businessId: id })}
-              >
-                buy for {price}$
-              </GameButton>
-            )}
+          <div styleName="controls-footer">
+            <div styleName="upgrade-button">
+              <UpgradeButton
+                businessId={id}
+                businessPrice={price}
+                userCapital={userCapital} />
+            </div>
 
-          {isBought
-            ? (
-              <GameButton onClick={() => emitGainCapital({ businessId: id })}>
-                {startGainCapitalTimestamp
-                  ? <TimerCountdown
-                      gainCapitalDurationMs={gainCapitalDurationMs}
-                      startGainCapitalTimestamp={startGainCapitalTimestamp} />
-                  : 'gain capital'
-                }
-              </GameButton>
-            ) : null}
-
-          {isBought
-            ? (
-              <GameButton onClick={() => emitHireManager({ businessId: id })}>
-                {startGainCapitalTimestamp
-                  ? <TimerCountdown
-                      gainCapitalDurationMs={gainCapitalDurationMs}
-                      startGainCapitalTimestamp={startGainCapitalTimestamp} />
-                  : 'hire a manager'
-                }
-              </GameButton>
-            ) : null}
+            <div styleName="timer">
+              <TimerCountdown
+                durationMs={gainCapitalDurationMs}
+                timestamp={startGainCapitalTimestamp} />
+            </div>
+          </div>
         </div>
       </div>
-    </div>
+
+      <div styleName="button-controls">
+        <BusinessButtonControls
+          businessId={id}
+          isBusinessBought={isBought}
+          isBusinessManaged={isManaged}
+          userCapital={userCapital}
+          managerPrice={managerPrice}
+          isGainingCapital={isGainingCapital} />
+      </div>
+    </Content>
   );
 };
 

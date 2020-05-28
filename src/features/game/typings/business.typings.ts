@@ -15,6 +15,8 @@ export type BusinessType = {
   isGainingCapital: boolean
   startGainCapitalTimestamp: number | null
   isBought: boolean
+  isManaged: boolean
+  managerPrice: number
 };
 
 export type BusinessByIdType = {
@@ -50,4 +52,3 @@ export type GetBusinessServerResponseType = ServerResponseType<UpdateBusinessPay
 export type GetBusinessListServerResponseType = ServerResponseType<GetBusinessListPayloadType>;
 
 export type GameErrorServerResponseType = ServerResponseType<GameErrorPayloadType>;
-

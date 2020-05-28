@@ -1,0 +1,108 @@
+@import '../../../../style/colors.scss';
+
+.common {
+  width: 500px;
+  min-height: 50px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+  border-radius: 10px;
+  padding: 10px 15px;
+  margin: 5px 0px;
+
+  background-color: $brown;
+
+  &.active {
+    flex-direction: column;
+    align-items: normal;
+  }
+}
+
+.content {
+  display: flex;
+  padding-bottom: 15px;
+  border-bottom: 1px solid $black;
+}
+
+.info {
+  display: flex;
+  flex-grow: 1;
+
+  flex-direction: column;
+  align-items: center;
+  margin-right: 10px;
+
+  word-break: break-word;
+}
+
+.title {
+  font-size: 20px;
+  font-weight: bold;
+  font-family: Arial;
+  color: $white;
+  margin-bottom: 5px;
+  padding: 5px 10px;
+}
+
+.level {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 100%;
+  box-sizing: border-box;
+  height: 40px;
+  padding: 5px;
+
+  background-color: $armadillo;
+
+  border-radius: 10px;
+
+  color: $white;
+  font-size: 14px;
+}
+
+.controls {
+  display: flex;
+  flex-grow: 3;
+
+  flex-direction: column;
+
+  word-break: break-word;
+}
+
+.controls-footer {
+  display: flex;
+}
+
+.profit {
+  margin-bottom: 5px;
+  padding: 5px 10px;
+  text-align: center;
+}
+
+.upgrade-button {
+  flex-grow: 1;
+}
+
+.timer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  height: 40px;
+  flex-grow: 1;
+}
+
+.button-controls {
+  margin-top: 10px;
+}
+
+.profit-text {
+  font-size: 20px;
+  font-weight: bold;
+  font-family: Arial;
+  color: $white;
+}

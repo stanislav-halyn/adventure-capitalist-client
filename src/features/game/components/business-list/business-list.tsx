@@ -23,26 +23,29 @@ const BusinessList = ({
   businessIds,
   businessById,
   userCapital
-}: BusinessListProps) => {
-  return (
-    <div>
-      {businessIds.map(businessId => {
-        const business = businessById[businessId];
+}: BusinessListProps) => (
+  <div styleName="common">
+    {businessIds.map(businessId => {
+      const business = businessById[businessId];
 
-        return (
-          <BusinessListItem
-            key={`business-item-${businessId}`}
-            id={business.id}
-            title={business.title}
-            profit={business.profit}
-            price={business.price}
-            isBought={business.isBought}
-            gainCapitalDurationMs={business.gainCapitalDurationMs}
-            startGainCapitalTimestamp={business.startGainCapitalTimestamp}
-            userCapital={userCapital} />
-        )})}
-    </div>
-  );
-};
+      return (
+        <BusinessListItem
+          key={`business-item-${businessId}`}
+          id={business.id}
+          title={business.title}
+          level={business.level}
+          profit={business.profit}
+          price={business.price}
+          isBought={business.isBought}
+          isManaged={business.isManaged}
+          managerPrice={business.managerPrice}
+          gainCapitalDurationMs={business.gainCapitalDurationMs}
+          startGainCapitalTimestamp={business.startGainCapitalTimestamp}
+          isGainingCapital={business.isGainingCapital}
+          userCapital={userCapital} />
+      );
+    })}
+  </div>
+);
 
 export default CSSModules(BusinessList, styles);

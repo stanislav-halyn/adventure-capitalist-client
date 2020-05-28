@@ -35,7 +35,9 @@ describe('#business.reducer.ts', () => {
     gainCapitalDurationMs: 500,
     isGainingCapital: false,
     startGainCapitalTimestamp: null,
-    isBought: false
+    isBought: false,
+    isManaged: false,
+    managerPrice: 3000
   };
 
   const UNKNOWN_ACTION = 'UNKNOWN_ACTION';
@@ -66,23 +68,23 @@ describe('#business.reducer.ts', () => {
     (formatBusinessListToMap as jest.Mock).mockImplementation(() => formattedBusinessesList);
 
 
-    test(`should return correct state`, () => {
+    test('should return correct state', () => {
       const result = businessReducer(initialState, action);
-  
+
       expect(result.count)
         .toEqual(1);
-  
+
       expect(result.businessById)
         .toEqual(formattedBusinessesList.businessById);
-  
+
       expect(result.businessIds)
         .toEqual(formattedBusinessesList.businessIds);
     });
 
 
-    test(`should call functions with correct arguments`, () => {
+    test('should call functions with correct arguments', () => {
       businessReducer(initialState, action);
-  
+
       expect(formatBusinessListToMap)
         .toBeCalled();
 
