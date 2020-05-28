@@ -1,5 +1,7 @@
 const path = require('path');
 
+const Dotenv = require('dotenv-webpack');
+
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
@@ -41,9 +43,11 @@ module.exports = {
   plugins: [
     new CleanWebpackPlugin(),
 
+    new Dotenv({ path: path.join(__dirname, '../.env') }),
+
     new HtmlWebpackPlugin({
       template: path.join(__dirname, '../src/index.html'),
       favicon: path.join(__dirname, '../src/favicon.ico')
-    })
+    }),
   ]  
 }
