@@ -14,7 +14,8 @@
   },
   "homepage": "https://github.com/stanislav-halyn/adventure-capitalist-client#readme",
   "scripts": {
-    "start": "webpack-dev-server --config ./webpack/webpack.dev.js",
+    "start": "node ./server.js",
+    "start:dev": "webpack-dev-server --config ./webpack/webpack.dev.js",
     "build": "webpack --config ./webpack/webpack.prod.js",
     "test": "jest ./src --passWithNoTests --config ./config/jest/jest.config.js",
     "test:watch": "jest ./src --watch --passWithNoTests --config ./config/jest/jest.config.js",
@@ -69,6 +70,7 @@
   },
   "dependencies": {
     "@reduxjs/toolkit": "1.3.6",
+    "express": "4.17.1",
     "react": "16.13.1",
     "react-css-modules": "4.7.11",
     "react-dom": "16.13.1",
