@@ -55,27 +55,24 @@ const BusinessListItem = ({
   return (
     <div styleName="common">
       <div styleName="content">
-        <BusinessListItemInfo title={title} level={level} />
+        <BusinessListItemInfo title={title} level={level} profit={profit} />
 
         <BusinessListItemStatusData
           id={id}
           title={title}
-          profit={profit}
           price={price}
           userCapital={userCapital}
           gainCapitalDurationMs={gainCapitalDurationMs}
           startGainCapitalTimestamp={startGainCapitalTimestamp} />
       </div>
 
-      <div styleName="footer">
-        <BusinessListItemButtonControls
-          businessId={id}
-          isBusinessBought={isBought}
-          isBusinessManaged={isManaged}
-          userCapital={userCapital}
-          managerPrice={managerPrice}
-          isGainingCapital={isGainingCapital} />
-      </div>
+      <BusinessListItemButtonControls
+        businessId={id}
+        isBusinessBought={isBought}
+        isBusinessManaged={isManaged}
+        userCapital={userCapital}
+        managerPrice={managerPrice}
+        isGainingCapital={isGainingCapital} />
     </div>
   );
 };

@@ -19,13 +19,16 @@ type UpgradeButtonProps = {
   businessId: number
   businessPrice: number
   userCapital: number
+  className?: string
+  styleName?: string
 };
 
 
 const UpgradeButton = ({
   businessId,
   businessPrice,
-  userCapital
+  userCapital,
+  className
 }: UpgradeButtonProps) => {
   const handleUpgradeBusiness = useCallback(() => {
     emitUpgradeBusiness({ businessId });
@@ -35,6 +38,7 @@ const UpgradeButton = ({
   return (
     <GameButton
       styleName="common"
+      className={className}
       disabled={businessPrice > userCapital}
       onClick={handleUpgradeBusiness}>
       upgrade for {formatLargeNumberToCurrency(businessPrice)}

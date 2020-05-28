@@ -2,25 +2,20 @@
 
 .common {
   width: 500px;
-  height: 165px;
 
   display: flex;
   flex-direction: column;
   justify-content: center;
   
   border-radius: 10px;
-  padding: 10px 15px;
+  padding: 20px 15px;
   margin: 5px 0px;
 
   background-color: $brown;
 }
 
 .content {
-  display: flex;
   padding-bottom: 15px;
   border-bottom: 1px solid $black;
-}
-
-.footer {
-  margin-top: 10px;
+  margin-bottom: 10px;
 }

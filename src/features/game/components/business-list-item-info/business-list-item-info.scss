@@ -6,18 +6,17 @@
 
   flex-direction: column;
   align-items: center;
-  margin-right: 10px;
+  margin-bottom: 20px;
 
   word-break: break-word;
 }
 
 .title {
-  font-size: 20px;
-  font-weight: bold;
-  font-family: Arial;
-  color: $white;
   margin-bottom: 5px;
   padding: 5px 10px;
+  font-size: 20px;
+  font-weight: bold;
+  color: $white;
 }
 
 .level {
@@ -36,4 +35,10 @@
 
   color: $white;
   font-size: 14px;
+}
+
+.profit {
+  margin-bottom: 5px;
+  padding: 5px 10px;
+  color: $white;
 }

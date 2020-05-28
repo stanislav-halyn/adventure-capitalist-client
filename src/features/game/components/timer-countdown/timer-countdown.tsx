@@ -11,18 +11,21 @@ import styles from './timer-countdown.scss';
 
 type TimerCountdownProps = {
   durationMs: number
-  timestamp: number | null
+  timestamp: number | null,
+  className?: string
+  styleName?: string
 };
 
 
 const TimerCountdown = ({
   durationMs,
-  timestamp
+  timestamp,
+  className
 }: TimerCountdownProps) => {
   const timeLeft = useCountdownTimer(durationMs, timestamp);
 
   return (
-    <div styleName="common">
+    <div styleName="common" className={className}>
       {timeLeft}
     </div>
   );

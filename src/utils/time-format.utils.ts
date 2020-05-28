@@ -48,9 +48,7 @@ const getTimeUnits = (ms: number): Array<number> => {
   const minutes = totalMinutes % 60;
   const hours = totalHours % 24;
 
-  return hours !== 0
-    ? [hours, minutes, seconds]
-    : [minutes, seconds];
+  return [hours, minutes, seconds];
 };
 
 
