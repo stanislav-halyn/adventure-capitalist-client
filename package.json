@@ -1,6 +1,6 @@
 {
   "name": "adventure-capitalist-client",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "description": "This is a client for the `adventure-capitalist-game` repository.",
   "main": "./dist/bundle.min.js",
   "repository": {
