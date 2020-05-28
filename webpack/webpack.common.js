@@ -1,21 +1,15 @@
 const path = require('path');
 
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
-const rootDir = path.join(__dirname, '../');
-
 
 module.exports = {
-  entry: path.join(rootDir, './src/index.tsx'),
+  entry: path.join(__dirname, '../src/index.tsx'),
 
   resolve: {
     extensions: ['.ts', '.tsx', '.js', '.scss']
-  },
-
-  output: {
-    path: path.join(rootDir, './dist'),
-    filename: 'bundle.min.js'
   },
 
   module: {
@@ -45,10 +39,11 @@ module.exports = {
   },
 
   plugins: [
-    new MiniCssExtractPlugin(),
+    new CleanWebpackPlugin(),
 
     new HtmlWebpackPlugin({
-      template: path.join(rootDir, './src/index.html')
+      template: path.join(__dirname, '../src/index.html'),
+      favicon: path.join(__dirname, '../src/favicon.ico')
     })
   ]  
 }
