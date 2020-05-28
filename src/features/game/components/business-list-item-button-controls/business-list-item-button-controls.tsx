@@ -68,7 +68,7 @@ const BusinessListItemButtonControls = ({
 
       <GameButton
         styleName="button"
-        disabled={managerPrice > userCapital || isBusinessManaged || isGainingCapital}
+        disabled={managerPrice > userCapital || isBusinessManaged}
         onClick={handleHireManager}>
         {hireManagerButtonText}
       </GameButton>

@@ -32,6 +32,11 @@ const calculateAnimationDuration = (durationMs: number, timestamp: number | null
 const calculateInitialProgressPercentage = (durationMs: number, timestamp: number | null) => {
   const msPassed = durationMs - calculateMsLeft({ durationMs, timestamp });
 
+  // handle server delay
+  if (msPassed < 500) {
+    return 0;
+  }
+
   return calculatePercentageOf(msPassed, durationMs);
 };
 
