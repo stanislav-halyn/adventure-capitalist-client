@@ -10,7 +10,7 @@ import {
 // Typings
 import {
   UpdateBusinessPayloadType,
-  GetBusinessListPayloadType,
+  GetBusinessListPayloadType
 } from '../typings/business.typings';
 
 

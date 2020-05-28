@@ -14,9 +14,9 @@ const socket = io('http://localhost:3000', {
   transportOptions: {
     polling: {
       extraHeaders: {
-        'Authorization': `Auth ${clientId}`,
-      },
-    },
+        Authorization: `Auth ${clientId}`
+      }
+    }
   }
 });
 
