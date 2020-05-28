@@ -38,7 +38,7 @@ export default () => {
   const getBusinessListHandler = useCallback((response: GetBusinessListServerResponseType) => {
     dispatch(getBusinessList(response.data));
   }, [dispatch]);
-  
+
 
   const gameErrorHandler = useCallback((response: GameErrorServerResponseType) => {
     alert(response.data.error);

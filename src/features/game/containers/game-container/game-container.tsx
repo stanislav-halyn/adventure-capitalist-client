@@ -14,7 +14,7 @@ import {
 import { selectUserInfoCapital } from '../../selectors/user-info.selectors';
 
 // Hooks
-import { useGameHandlers } from '../../hooks';
+import useGameHandlers from '../../hooks/use-game-handlers';
 
 // Utils
 import { emitUpdateUserInfo, emitGetBusinessList } from '../../utils/game-socket-emitter.utils';
