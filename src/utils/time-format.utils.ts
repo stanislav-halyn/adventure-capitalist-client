@@ -65,9 +65,20 @@ const calculateMsDifference = ({ timestamp, durationMs }: TimeDifferenceArgs): n
 
 
 /**
+ * Returns 0 if ms is negative
+ */
+const filterNegativeDifference = (ms: number): number => (ms > 0 ? ms : 0);
+
+
+/**
  * Formats `ms` to format [hh:mm:ss] or [mm:ss]
  */
-const formatTime = compose<string, number>(join(':'), map(prettifyNumber), getTimeUnits);
+const formatTime = compose<string, number>(
+  join(':'),
+  map(prettifyNumber),
+  getTimeUnits,
+  filterNegativeDifference
+);
 
 
 /**
