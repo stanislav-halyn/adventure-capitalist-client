@@ -9,7 +9,7 @@ import GameButton from '../game-button';
 import { emitUpgradeBusiness } from '../../utils/game-socket-emitter.utils';
 
 // Utils
-import { formatLargeNumberToCurrency } from '../../../../utils/number-format.utils';
+import { formatLargeNumberToCurrency } from 'utils/number-format.utils';
 
 // Styles
 import styles from './upgrade-button.scss';

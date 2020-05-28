@@ -2,10 +2,10 @@
 import io from 'socket.io-client';
 
 // Constants
-import { ServerActions } from '../constants/socket.constants';
+import { ServerActions } from 'constants/socket.constants';
 
 // Utils
-import { getItem, setItem } from '../utils/local-storage.utils';
+import { getItem, setItem } from 'utils/local-storage.utils';
 
 
 const host = process.env.API_HOST || 'http://localhost:3000';

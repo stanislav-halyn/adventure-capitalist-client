@@ -11,7 +11,16 @@ module.exports = {
   entry: path.join(__dirname, '../src/index.tsx'),
 
   resolve: {
-    extensions: ['.ts', '.tsx', '.js', '.scss']
+    extensions: ['.ts', '.tsx', '.js', '.scss'],
+    alias: {
+      config: path.resolve(__dirname, '../src/config'),
+      constants: path.resolve(__dirname, '../src/constants'),
+      features: path.resolve(__dirname, '../src/features'),
+      store: path.resolve(__dirname, '../src/store'),
+      style: path.resolve(__dirname, '../src/style'),
+      typings: path.resolve(__dirname, '../src/utils'),
+      utils: path.resolve(__dirname, '../src/utils'),
+    }
   },
 
   module: {

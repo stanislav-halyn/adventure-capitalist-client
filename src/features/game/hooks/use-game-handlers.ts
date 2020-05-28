@@ -15,7 +15,7 @@ import {
 } from '../typings/business.typings';
 
 // Utils
-import { subscribeTo, unsubscribe } from '../../../utils/socket.utils';
+import { subscribeTo, unsubscribe } from 'utils/socket.utils';
 
 // Constants
 import { GameActions } from '../constants/game-actions.constants';
