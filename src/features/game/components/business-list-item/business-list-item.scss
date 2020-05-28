@@ -2,22 +2,17 @@
 
 .common {
   width: 500px;
-  min-height: 50px;
+  height: 165px;
 
   display: flex;
+  flex-direction: column;
   justify-content: center;
-  align-items: center;
   
   border-radius: 10px;
   padding: 10px 15px;
   margin: 5px 0px;
 
   background-color: $brown;
-
-  &.active {
-    flex-direction: column;
-    align-items: normal;
-  }
 }
 
 .content {
@@ -96,7 +91,7 @@
   flex-grow: 1;
 }
 
-.button-controls {
+.footer {
   margin-top: 10px;
 }
 

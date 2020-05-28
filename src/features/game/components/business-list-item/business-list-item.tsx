@@ -3,9 +3,10 @@ import React from 'react';
 import CSSModules from 'react-css-modules';
 
 // Components
+import BusinessListItemDisabled from '../business-list-item-disabled';
+
 import TimerCountdown from '../timer-countdown';
 import GameText from '../game-text';
-import BuyButton from '../buy-button';
 import UpgradeButton from '../upgrade-button';
 import BusinessButtonControls from '../business-button-controls';
 
@@ -32,16 +33,6 @@ type BusinessListItemProps = {
 };
 
 
-const Content = CSSModules(({
-  children,
-  className
-}: { children: React.ReactNode, className?: string, styleName?: string }) => (
-  <div styleName="common" className={className}>
-    {children}
-  </div>
-), styles);
-
-
 const BusinessListItem = ({
   id,
   title,
@@ -58,18 +49,16 @@ const BusinessListItem = ({
 }: BusinessListItemProps) => {
   if (!isBought) {
     return (
-      <Content>
-        <BuyButton
-          businessId={id}
-          businessTitle={title}
-          businessPrice={price}
-          userCapital={userCapital} />
-      </Content>
+      <BusinessListItemDisabled
+        id={id}
+        title={title}
+        price={price}
+        userCapital={userCapital} />
     );
   }
 
   return (
-    <Content styleName="active">
+    <div styleName="common">
       <div styleName="content">
         <div styleName="info">
           <GameText styleName="title">{title}</GameText>
@@ -98,7 +87,7 @@ const BusinessListItem = ({
         </div>
       </div>
 
-      <div styleName="button-controls">
+      <div styleName="footer">
         <BusinessButtonControls
           businessId={id}
           isBusinessBought={isBought}
@@ -107,7 +96,7 @@ const BusinessListItem = ({
           managerPrice={managerPrice}
           isGainingCapital={isGainingCapital} />
       </div>
-    </Content>
+    </div>
   );
 };
 
