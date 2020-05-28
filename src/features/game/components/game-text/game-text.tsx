@@ -7,18 +7,19 @@ import styles from './game-text.scss';
 
 
 type GameTextProps = {
-  children: ReactNode
-}
+  children: ReactNode,
+  styleName?: string
+  className?: string
+};
 
 
 const GameText = ({
-  children
-}: GameTextProps) => {
-  return (
-    <div>
-      {children}
-    </div>
-  );
-};
+  children,
+  className
+}: GameTextProps) => (
+  <div styleName="common" className={className}>
+    {children}
+  </div>
+);
 
 export default CSSModules(GameText, styles);
