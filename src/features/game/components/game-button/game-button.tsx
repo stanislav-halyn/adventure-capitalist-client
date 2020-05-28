@@ -22,6 +22,7 @@ const GameButton = ({
   children
 }: GameButtonProps) => (
   <button
+    styleName="common"
     className={className}
     disabled={disabled}
     onClick={onClick}>
