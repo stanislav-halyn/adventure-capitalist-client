@@ -1,42 +1,28 @@
 // Modules
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import CSSModules from 'react-css-modules';
+
+// Hooks
+import useCountdownTimer from '../../hooks/use-countdown-timer';
 
 // Styles
 import styles from './timer-countdown.scss';
 
 
 type TimerCountdownProps = {
-  startGainCapitalTimestamp: number
-  gainCapitalDurationMs: number
-}
+  durationMs: number
+  timestamp: number | null
+};
 
 
 const TimerCountdown = ({
-  gainCapitalDurationMs,
-  startGainCapitalTimestamp
+  durationMs,
+  timestamp
 }: TimerCountdownProps) => {
-  const calculateTimeLeft = () => {
-    const difference = (startGainCapitalTimestamp + gainCapitalDurationMs) - new Date().getTime();
-    const time = new Date(difference);
+  const timeLeft = useCountdownTimer(durationMs, timestamp);
 
-    return `${time.getMinutes()}:${time.getSeconds()}`;
-  };
-
-  const [timeLeft, setTimeLeft] = useState(calculateTimeLeft());
-
-  useEffect(() => {
-    const id = setInterval(() => {
-      setTimeLeft(calculateTimeLeft());
-    }, 1000);
-
-    return () => {
-      clearInterval(id);
-    }
-  }, []);
-  
   return (
-    <span>
+    <span styleName="common">
       {timeLeft}
     </span>
   );
