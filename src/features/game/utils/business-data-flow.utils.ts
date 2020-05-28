@@ -17,12 +17,11 @@ export const formatBusinessListToMap = (
 ): BusinessesMapType => (
   businessList
     .reduce((acc: BusinessesMapType, business: BusinessType) => ({
-        businessById: { ...acc.businessById, [business.id]: business },
-        businessIds: [...acc.businessIds, business.id]
-      }),
-      {
-        businessById: {},
-        businessIds: []
-      }
-    )
+      businessById: { ...acc.businessById, [business.id]: business },
+      businessIds: [...acc.businessIds, business.id]
+    }),
+    {
+      businessById: {},
+      businessIds: []
+    })
 );

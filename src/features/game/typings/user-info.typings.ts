@@ -10,7 +10,7 @@ export type UserInfoStateType = {
 // Action types
 export type UpdateUserInfoPayloadType = {
   capital: number
-}
+};
 
 // Server response types
 export type GetUserInfoServerResponseType = ServerResponseType<UpdateUserInfoPayloadType>;

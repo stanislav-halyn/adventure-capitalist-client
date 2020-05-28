@@ -10,4 +10,4 @@ export const configureStore = () => {
   const store = createStore(rootReducer, devToolsEnhancer({}));
 
   return store;
-}
+};

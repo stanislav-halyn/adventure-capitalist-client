@@ -22,11 +22,11 @@ const handleUpdateUserInfo = (
 ): UserInfoStateType => ({
   ...state,
   ...action.payload
-})
+});
 
 
 const handlers = {
-  [GET_USER_INFO]: handleUpdateUserInfo,
+  [GET_USER_INFO]: handleUpdateUserInfo
 };
 
 export default createReducer(initialState, handlers);

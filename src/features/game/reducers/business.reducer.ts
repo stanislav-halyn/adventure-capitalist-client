@@ -11,7 +11,7 @@ import {
 import {
   BusinessStateType,
   UpdateBusinessPayloadType,
-  GetBusinessListPayloadType,
+  GetBusinessListPayloadType
 } from '../typings/business.typings';
 
 // Utils

@@ -5,10 +5,8 @@ import React from 'react';
 import { GameContainer } from './features/game';
 
 
-const App = () => {
-  return (
-    <GameContainer />
-  );
-};
+const App = () => (
+  <GameContainer />
+);
 
 export default App;
