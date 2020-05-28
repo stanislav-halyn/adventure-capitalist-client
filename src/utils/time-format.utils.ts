@@ -19,19 +19,19 @@ const prettifyNumber = (number: number) => `${number < 10 ? '0' : ''}${number}`;
 /**
  * Gets total seconds in `ms`
  */
-const msToSeconds = (ms: number): number => Math.floor(ms / 1000);
+export const msToSeconds = (ms: number): number => ms / 1000;
 
 
 /**
  * Gets total minutes in `ms`
  */
-const msToMinutes = (ms: number): number => Math.floor(ms / (1000 * 60));
+export const msToMinutes = (ms: number): number => ms / (1000 * 60);
 
 
 /**
  * Gets total hours in `ms`
  */
-const msToHours = (ms: number): number => Math.floor(ms / (1000 * 60 * 60));
+export const msToHours = (ms: number): number => ms / (1000 * 60 * 60);
 
 
 /**
@@ -40,9 +40,9 @@ const msToHours = (ms: number): number => Math.floor(ms / (1000 * 60 * 60));
  * If h is 0 - returns [m:s]
  */
 const getTimeUnits = (ms: number): Array<number> => {
-  const totalSeconds = msToSeconds(ms);
-  const totalMinutes = msToMinutes(ms);
-  const totalHours = msToHours(ms);
+  const totalSeconds = Math.floor(msToSeconds(ms));
+  const totalMinutes = Math.floor(msToMinutes(ms));
+  const totalHours = Math.floor(msToHours(ms));
 
   const seconds = totalSeconds % 60;
   const minutes = totalMinutes % 60;
@@ -53,11 +53,19 @@ const getTimeUnits = (ms: number): Array<number> => {
 
 
 /**
- * Calculates the difference of time in ms
+ * Calculates ms left until the timestamp ends
  */
-const calculateMsDifference = ({ timestamp, durationMs }: TimeDifferenceArgs): number => (
+export const calculateMsLeft = ({ timestamp, durationMs }: TimeDifferenceArgs): number => (
+  (timestamp! + durationMs) - new Date().getTime()
+);
+
+
+/**
+ * Safe calculate ms left until the timestamp ends
+ */
+const calculateMsLeftSafe = ({ timestamp, durationMs }: TimeDifferenceArgs): number => (
   timestamp
-    ? (timestamp + durationMs) - new Date().getTime()
+    ? calculateMsLeft({ timestamp, durationMs })
     : durationMs
 );
 
@@ -82,4 +90,4 @@ const formatTime = compose<string, number>(
 /**
  * Calculates time left since `timestamp` with `duration` started
  */
-export const calculateTimeLeft = compose<string, TimeDifferenceArgs>(formatTime, calculateMsDifference);
+export const calculateTimeLeft = compose<string, TimeDifferenceArgs>(formatTime, calculateMsLeftSafe);

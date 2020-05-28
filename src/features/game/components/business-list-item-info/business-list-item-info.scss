@@ -20,24 +20,6 @@
 }
 
 .level {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  width: 100%;
-  box-sizing: border-box;
-  height: 40px;
-  padding: 5px;
-
-  background-color: $armadillo;
-
-  border-radius: 10px;
-
-  color: $white;
-  font-size: 14px;
-}
-
-.profit {
   margin-bottom: 5px;
   padding: 5px 10px;
   color: $white;

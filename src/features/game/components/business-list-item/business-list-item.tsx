@@ -55,7 +55,12 @@ const BusinessListItem = ({
   return (
     <div styleName="common">
       <div styleName="content">
-        <BusinessListItemInfo title={title} level={level} profit={profit} />
+        <BusinessListItemInfo
+          title={title}
+          level={level}
+          profit={profit}
+          gainCapitalDurationMs={gainCapitalDurationMs}
+          startGainCapitalTimestamp={startGainCapitalTimestamp} />
 
         <BusinessListItemStatusData
           id={id}
