@@ -1,0 +1,15 @@
+
+.common {
+  display: flex;
+  justify-content: center;
+}
+
+.button {
+  width: 245px;
+  height: 40px;
+  margin-right: 10px;
+
+  &:last-child {
+    margin-right: 0px;
+  }
+}

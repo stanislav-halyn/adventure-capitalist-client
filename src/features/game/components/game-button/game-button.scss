@@ -1,0 +1,16 @@
+@import '../../../../style/colors.scss';
+
+.common {
+  padding: 10px 20px;
+  outline: none;
+  border: none;
+
+  border-radius: 16px;
+  font-size: 12px;
+
+  cursor: pointer;
+
+  &:hover:not(:disabled) {
+    background-color: $gray;
+  }
+}
