@@ -1,0 +1,17 @@
+@import '~style/colors.scss';
+
+.common {
+  display: flex;
+}
+
+.button {
+  width: 245px;
+}
+
+
+.timer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 245px;
+}

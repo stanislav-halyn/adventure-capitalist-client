@@ -1,0 +1,29 @@
+{
+  "compilerOptions": {
+    "noFallthroughCasesInSwitch": true,
+    "noUnusedParameters": true,
+    "noImplicitReturns": true,
+    "esModuleInterop": true,
+    "noUnusedLocals": true,
+    "noImplicitAny": true,
+    "sourceMap": true,
+    "target": "es2015",
+    "module": "commonjs",
+    "baseUrl": "./src",
+    "strict": true,
+    "outDir": "./dist",
+    "resolveJsonModule": true,
+    "noResolve": false,
+    "lib": [
+      "es2015",
+      "es2017",
+      "dom"
+    ],
+    "jsx": "react"
+  },
+  "include": ["src/**/*"],
+  "exclude": ["node_modules"],
+  "typeAcquisition": {
+    "enable": true
+  }
+}

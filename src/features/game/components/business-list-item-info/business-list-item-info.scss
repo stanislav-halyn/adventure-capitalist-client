@@ -1,0 +1,26 @@
+@import '~style/colors.scss';
+
+.common {
+  display: flex;
+  flex-grow: 1;
+
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 20px;
+
+  word-break: break-word;
+}
+
+.title {
+  margin-bottom: 5px;
+  padding: 5px 10px;
+  font-size: 20px;
+  font-weight: bold;
+  color: $white;
+}
+
+.level {
+  margin-bottom: 5px;
+  padding: 5px 10px;
+  color: $white;
+}

@@ -1,0 +1,21 @@
+@import '~style/colors.scss';
+
+.common {
+  width: 500px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  
+  border-radius: 10px;
+  padding: 20px 15px;
+  margin: 5px 20px 5px 0px;
+
+  background-color: $brown;
+}
+
+.content {
+  padding-bottom: 15px;
+  border-bottom: 1px solid $black;
+  margin-bottom: 10px;
+}

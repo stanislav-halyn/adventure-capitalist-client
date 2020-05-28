@@ -1,0 +1,3 @@
+
+export const UPDATE_BUSINESS = 'UPDATE_BUSINESS';
+export const GET_BUSINESS_LIST = 'GET_BUSINESS_LIST';

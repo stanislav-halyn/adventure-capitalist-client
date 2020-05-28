@@ -1,0 +1,70 @@
+{
+  "plugins": [
+    "react",
+    "react-hooks",
+    "@typescript-eslint"
+  ],
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "project": "./tsconfig.json"
+  },
+  "extends": ["airbnb-typescript"],
+  "settings": {
+    "react": {
+      "pragma": "React",
+      "version": "16.0"
+    }
+  },
+  "rules": {
+    "@typescript-eslint/camelcase": 0,
+    "lines-between-class-members": "off",
+    "no-else-return": ["error", { "allowElseIf": true }],
+    "arrow-parens": ["error", "as-needed"],
+    "comma-dangle": ["error", "never"],
+    "import/no-extraneous-dependencies": ["error", { "devDependencies": true }],
+    "indent": ["error", 2, { "SwitchCase": 1 }],
+    "jsx-a11y/no-static-element-interactions": "off",
+    "jsx-a11y/no-noninteractive-tabindex": "off",
+    "jsx-a11y/no-access-key": "off",
+    "jsx-a11y/media-has-caption": "off",
+    "max-len": ["error", 120],
+    "newline-per-chained-call": ["error", { "ignoreChainWithDepth": 2 }],
+    "no-param-reassign": ["error", { "props": false }],
+    "no-underscore-dangle": "off",
+    "operator-linebreak": ["error", "before"],
+    "prefer-arrow-callback": ["error", { "allowNamedFunctions": true }],
+    "react/jsx-boolean-value": ["off"],
+    "react/jsx-closing-bracket-location": [2, { "selfClosing": "after-props", "nonEmpty": "after-props" }],
+    "react/jsx-filename-extension": [ 1, { "extensions": [".ts", ".tsx"] } ],
+    "import/no-unresolved": "off",
+    "react/jsx-one-expression-per-line": "off",
+    "import/prefer-default-export": "off",
+    "import/order": "off",
+    "jsx-a11y/click-events-have-key-events": "off",
+    "no-unused-expressions": "off",
+    "react/destructuring-assignment": "off",
+    "no-shadow": "off",
+    "no-inline-comments": "off",
+    "react/forbid-foreign-prop-types": "off",
+    "react/sort-comp": "off",
+    "camelcase": "error",
+    "jsx-a11y/label-has-for": [ 2, {
+      "components": [ "Label" ],
+      "required": {
+        "every": [ "nesting", "id" ]
+      },
+      "allowChildren": true
+    }],
+    "react/prefer-es6-class": ["error", "always"],
+    "react/button-has-type": "off",
+    "semi": ["error", "always"],
+    "react-hooks/rules-of-hooks": "error",
+    "react-hooks/exhaustive-deps": "error"
+  },
+  "env": {
+    "browser": true,
+    "node": true,
+    "es6": true,
+    "jest": true
+  }
+}
