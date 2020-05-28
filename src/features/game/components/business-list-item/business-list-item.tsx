@@ -11,7 +11,7 @@ import UpgradeButton from '../upgrade-button';
 import BusinessButtonControls from '../business-button-controls';
 
 // Utils
-import { formatLargeNumber } from '../../../../utils/number-format.utils';
+import { formatLargeNumberToCurrency } from '../../../../utils/number-format.utils';
 
 // Styles
 import styles from './business-list-item.scss';
@@ -67,7 +67,7 @@ const BusinessListItem = ({
 
         <div styleName="controls">
           <div styleName="profit">
-            <GameText styleName="profit-text">Profit: {formatLargeNumber(profit)}</GameText>
+            <GameText styleName="profit-text">Profit: {formatLargeNumberToCurrency(profit)}</GameText>
           </div>
 
           <div styleName="controls-footer">

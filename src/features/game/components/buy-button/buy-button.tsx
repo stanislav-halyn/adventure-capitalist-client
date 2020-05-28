@@ -9,7 +9,7 @@ import GameButton from '../game-button';
 import { emitBuyBusiness } from '../../utils/game-socket-emitter.utils';
 
 // Utils
-import { formatLargeNumber } from '../../../../utils/number-format.utils';
+import { formatLargeNumberToCurrency } from '../../../../utils/number-format.utils';
 
 // Styles
 import styles from './buy-button.scss';
@@ -35,7 +35,7 @@ const BuyButton = ({
 
   return (
     <GameButton disabled={businessPrice > userCapital} onClick={handleBuyBusiness}>
-      Buy {businessTitle} for {formatLargeNumber(businessPrice)}
+      Buy {businessTitle} for {formatLargeNumberToCurrency(businessPrice)}
     </GameButton>
   );
 };

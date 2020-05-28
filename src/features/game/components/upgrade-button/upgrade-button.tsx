@@ -9,7 +9,7 @@ import GameButton from '../game-button';
 import { emitUpgradeBusiness } from '../../utils/game-socket-emitter.utils';
 
 // Utils
-import { formatLargeNumber } from '../../../../utils/number-format.utils';
+import { formatLargeNumberToCurrency } from '../../../../utils/number-format.utils';
 
 // Styles
 import styles from './upgrade-button.scss';
@@ -37,7 +37,7 @@ const UpgradeButton = ({
       styleName="common"
       disabled={businessPrice > userCapital}
       onClick={handleUpgradeBusiness}>
-      upgrade for {formatLargeNumber(businessPrice)}
+      upgrade for {formatLargeNumberToCurrency(businessPrice)}
     </GameButton>
   );
 };
