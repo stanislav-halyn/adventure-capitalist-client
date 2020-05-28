@@ -1,0 +1,27 @@
+@import '../../../../style/colors.scss';
+
+.common {
+  display: flex;
+  flex-grow: 3;
+
+  flex-direction: column;
+
+  word-break: break-word;
+}
+
+.controls-footer {
+  display: flex;
+}
+
+.profit {
+  margin-bottom: 5px;
+  padding: 5px 10px;
+  text-align: center;
+}
+
+.profit-text {
+  font-size: 20px;
+  font-weight: bold;
+  font-family: Arial;
+  color: $white;
+}

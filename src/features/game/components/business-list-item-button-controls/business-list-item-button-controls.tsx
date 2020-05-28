@@ -12,10 +12,10 @@ import {
 } from '../../utils/game-socket-emitter.utils';
 
 // Styles
-import styles from './business-button-controls.scss';
+import styles from './business-list-item-button-controls.scss';
 
 
-type BusinessButtonControlsProps = {
+type BusinessListItemButtonControlsProps = {
   businessId: number
   isBusinessBought: boolean
   isBusinessManaged: boolean
@@ -25,14 +25,14 @@ type BusinessButtonControlsProps = {
 };
 
 
-const BusinessButtonControls = ({
+const BusinessListItemButtonControls = ({
   businessId,
   isBusinessBought,
   isBusinessManaged,
   userCapital,
   managerPrice,
   isGainingCapital
-}: BusinessButtonControlsProps) => {
+}: BusinessListItemButtonControlsProps) => {
   const handleGainCapital = useCallback(() => {
     emitGainCapital({ businessId });
   }, [businessId]);
@@ -76,4 +76,4 @@ const BusinessButtonControls = ({
   );
 };
 
-export default CSSModules(BusinessButtonControls, styles);
+export default CSSModules(BusinessListItemButtonControls, styles);

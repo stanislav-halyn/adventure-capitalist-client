@@ -22,9 +22,9 @@ const TimerCountdown = ({
   const timeLeft = useCountdownTimer(durationMs, timestamp);
 
   return (
-    <span styleName="common">
+    <div styleName="common">
       {timeLeft}
-    </span>
+    </div>
   );
 };
 
