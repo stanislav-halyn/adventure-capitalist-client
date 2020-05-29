@@ -6,8 +6,11 @@
   width: 100%;
   height: 40px;
   box-sizing: border-box;
-  overflow: hidden;
   position: relative;
+
+   // make overflow:hidden work in safari
+  -webkit-mask-image: -webkit-radial-gradient(white, black);
+  overflow: hidden;
 
   background-color: $armadillo;
 

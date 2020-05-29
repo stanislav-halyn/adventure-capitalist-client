@@ -52,7 +52,10 @@ module.exports = {
   plugins: [
     new CleanWebpackPlugin(),
 
-    new Dotenv({ path: path.join(__dirname, '../.env') }),
+    new Dotenv({
+      path: path.join(__dirname, '../.env'),
+      systemvars: true // allow to also use system env variables
+    }),
 
     new HtmlWebpackPlugin({
       template: path.join(__dirname, '../src/index.html'),

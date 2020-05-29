@@ -2,7 +2,7 @@
 import io from 'socket.io-client';
 
 // Constants
-import { ServerActions } from 'constants/socket.constants';
+import { DefaultSocketActions, ServerActions } from 'constants/socket.constants';
 
 // Utils
 import { getItem, setItem } from 'utils/local-storage.utils';
@@ -20,6 +20,16 @@ const socket = io(host, {
       }
     }
   }
+});
+
+
+socket.on(DefaultSocketActions.CONNECT_FAILED, () => {
+  alert('Connection tothe server failed');
+});
+
+
+socket.on(DefaultSocketActions.ERROR, () => {
+  alert('Internal server error');
 });
 
 
