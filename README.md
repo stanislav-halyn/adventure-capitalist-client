@@ -43,16 +43,16 @@ When your `.env` file is set up, you need to install dependencies with the follo
 ```
 
 
-Now to run the project in dev mode, run the following command:
+Now to run the project in dev or prod mode, run the following command:
 
 ```
-  npm start
+  npm run start:dev
 ```
-
-In order to build the production version, run:
+or 
 
 ```
   npm run build
+  npm start
 ```
 
 # Linters
